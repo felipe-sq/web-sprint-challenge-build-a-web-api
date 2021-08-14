@@ -21,9 +21,9 @@ const validateProjectID = async (req, res, next) => {
 };
 
 function validateProjectBody(req, res, next) {
-  if(!req.body.name || !req.body.description) {
+  if(!req.body.name || !req.body.description || !req.body.completed) {
     return res.status(400).json({
-      message: 'Please provide a name and description for the project!'
+      message: 'Please provide a name, description and completed option for the project!'
     });
   } else {
     next();

@@ -57,7 +57,7 @@ router.delete('/:id', mw.validateProjectID, (req, res) => {
 });
 
 router.get('/:id/actions', mw.validateProjectID, (req, res) => {
-  Projects.getProjectActions(req.project.actions)
+  Projects.getProjectActions(req.params.id)
     .then(actions => {
       res.status(200).json(actions)
     })
