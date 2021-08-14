@@ -7,7 +7,6 @@ const mw = require('./projects-middleware.js');
 const router = express.Router();
 
 router.get('/', (_, res) => {
-
   Projects.get()
     .then(projects => {
       res.status(200).json(projects)
