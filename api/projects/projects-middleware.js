@@ -35,10 +35,6 @@ function validateUpdatedProject(req, res, next) {
     return res.status(400).json({
       message: 'Please provide a name and description for the project update request!'
     });
-  } else if (!req.body.completed) {
-    return res.status(400).json({
-      message: 'Please provide a completed option for the project update request!'
-    }); 
   } else {
     next();
   }
