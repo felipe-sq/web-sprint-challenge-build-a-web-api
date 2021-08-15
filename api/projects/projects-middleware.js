@@ -30,9 +30,19 @@ function validateProjectBody(req, res, next) {
   }
 }
 
+function validateUpdatedProject(req, res, next) {
+  if(!req.body.name || !req.body.description) {
+    return res.status(400).json({
+      message: 'Please provide a name and description for the project update request!'
+    });
+  } else {
+    next();
+  }
+}
 
 // Add middlewares to the project route
 module.exports = {
   validateProjectID,
-  validateProjectBody
+  validateProjectBody,
+  validateUpdatedProject
 };

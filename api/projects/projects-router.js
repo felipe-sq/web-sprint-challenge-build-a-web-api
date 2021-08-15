@@ -34,7 +34,7 @@ router.post('/', mw.validateProjectBody, (req, res) => {
     })
 });
 
-router.put('/:id', mw.validateProjectID, mw.validateProjectBody, (req, res) => {
+router.put('/:id', mw.validateProjectID, mw.validateUpdatedProject, (req, res) => {
   Projects.update(req.params.id, req.body)
     .then(project => {
       res.status(200).json(project)
